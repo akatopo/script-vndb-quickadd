@@ -1,6 +1,6 @@
 {
   "name": "script-vndb-quickadd",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "scripts": {
     "watch": "rollup -c --watch",
     "build": "rollup -c",

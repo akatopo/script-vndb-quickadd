@@ -1,6 +1,7 @@
 {
   "github": {
     "release": true,
+    "host": "github.com",
     "assets": [
       "dist/*.js"
     ]

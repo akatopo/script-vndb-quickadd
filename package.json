@@ -1,0 +1,17 @@
+{
+  "name": "script-vndb-quickadd",
+  "version": "1.0.0",
+  "scripts": {
+    "watch": "rollup -c --watch",
+    "build": "rollup -c"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "eslint": "^8.56.0",
+    "rollup": "^4.9.2"
+  },
+  "dependencies": {
+    "xbbcode-parser": "github:akatopo/Extendible-BBCode-Parser#096070d"
+  }
+}

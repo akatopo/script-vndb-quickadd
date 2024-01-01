@@ -132,7 +132,7 @@ async function start(params, settings) {
     year: (_, { released }) => getReleaseYear(released),
     releaseDate: 'released',
     templateDescription: (_, { description }) =>
-      getMarkdownDescription(description ?? ''),
+      description ? getMarkdownDescription(description) : ' ',
   };
 
   const variables = pick(selectedGame, transformers);

@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "scripts": {
     "watch": "rollup -c --watch",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "release": "dotenv release-it --"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
+    "dotenv-cli": "^7.3.0",
     "eslint": "^8.56.0",
+    "release-it": "^17.0.1",
     "rollup": "^4.9.2"
   },
   "dependencies": {

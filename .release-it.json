@@ -1,0 +1,11 @@
+{
+  "github": {
+    "release": true,
+    "assets": [
+      "dist/*.js"
+    ]
+  },
+  "npm": {
+    "publish": false
+  }
+}

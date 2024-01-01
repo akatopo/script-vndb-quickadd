@@ -17,7 +17,7 @@ Uses the [vndb API](https://api.vndb.org/kana) to get the game information.
 ## Installation
 
 1. Make sure you use latest QuickAdd version (at least 0.5.1) !
-2. Save the script from the [latest release](releases) to your vault somewhere. Make sure it is saved as a JavaScript file, meaning that it has the `.js` at the end.
+2. Save the script from the [latest release](https://github.com/akatopo/script-vndb-quickadd/releases/) to your vault somewhere. Make sure it is saved as a JavaScript file, meaning that it has the `.js` at the end.
 3. Create a new template in your designated templates folder. Example template is provided below.
 4. Open the Macro Manager by opening the QuickAdd plugin settings and clicking `Manage Macros`.
 5. Create a new Macro - you decide what to name it.

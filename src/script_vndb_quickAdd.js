@@ -124,8 +124,16 @@ async function start(params, settings) {
     },
     platforms: (p) => listFromArray(p),
     keywords: (_, { tags }) => listFromNameProp(tags),
-    aliases: (_, { title, aliases = [] }) =>
-      listFromArray([...aliases, title], false),
+    aliases: (_, { title, released, aliases = [] }) => {
+      const releaseYear = getReleaseYear(released);
+      const releaseYearStr =
+        typeof releaseYear === 'number' ? ` (${releaseYear})` : '';
+
+      return listFromArray(
+        [...aliases, title, `${title}${releaseYearStr}`],
+        false,
+      );
+    },
     developer: (_, { developers }) => listFromNameProp(developers),
     templateDeveloper: (_, { developers }) =>
       developers?.map((d) => d.name).join(', ') ?? ' ',

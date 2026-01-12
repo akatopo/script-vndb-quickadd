@@ -243,7 +243,9 @@ function formatList(list, linkify = true) {
   }
   const decorate = (s) =>
     linkify
-      ? `'[[${escapeSingleQuotedYamlString(sanitizeFilename(s.trim()))}]]'`
+      ? `'[[${escapeSingleQuotedYamlString(
+          aliasIfNeeded(sanitizeFilename(s.trim()), s.trim()),
+        )}]]'`
       : `'${escapeSingleQuotedYamlString(s.trim())}'`;
 
   return `\n${list.map((item) => `  - ${decorate(item)}`).join('\n')}`;

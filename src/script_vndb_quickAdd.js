@@ -1,5 +1,8 @@
 /* globals Notice, request, requestUrl, moment */
 import xbbcode from 'xbbcode-parser';
+import sanitizeFilename from 'sanitize-filename';
+
+import { pick, aliasIfNeeded, escapeSingleQuotedYamlString } from './util.js';
 
 const notice = (msg) => new Notice(msg, 5000);
 const noticeAndThrow = (msg, cause) => {
@@ -226,21 +229,6 @@ async function tryDownloadPoster({ posterUrl, gameName, basePath = '' }) {
   }
 }
 
-function pick(obj, propTransformers) {
-  const entries = Object.entries(propTransformers).map(([key, transformer]) => {
-    const value = (
-      {
-        string: () => obj[transformer],
-        function: () => transformer(obj[key], obj, key),
-      }[typeof transformer] ?? (() => obj[key])
-    )();
-
-    return [key, value];
-  });
-
-  return Object.fromEntries(entries);
-}
-
 function formatTitleForSuggestion({ title, released, platforms = [] }) {
   const platformsStr = ` [${platforms.join(', ')}]`;
   const releaseYear = getReleaseYear(released);
@@ -259,14 +247,6 @@ function formatList(list, linkify = true) {
       : `'${escapeSingleQuotedYamlString(s.trim())}'`;
 
   return `\n${list.map((item) => `  - ${decorate(item)}`).join('\n')}`;
-}
-
-function sanitizeFilename(string) {
-  return string.replace(/[\\,#%&{}/*<>$":@.|^[]]*/g, '');
-}
-
-function escapeSingleQuotedYamlString(s) {
-  return s.replaceAll("'", "''");
 }
 
 async function getGames(query) {

@@ -15,6 +15,7 @@
     "rollup": "^4.9.2"
   },
   "dependencies": {
+    "sanitize-filename": "^1.6.3",
     "xbbcode-parser": "github:akatopo/Extendible-BBCode-Parser#096070d"
   }
 }
